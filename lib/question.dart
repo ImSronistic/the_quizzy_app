@@ -1,7 +1,7 @@
 class Question {
-  String questionText;
-  bool answerText;
+  String q;
+  bool a;
 
   //constructor
-  Question({this.questionText, this.answerText});
+  Question({this.q, this.a});
 }

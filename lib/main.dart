@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'question.dart';
+import 'quiz_memo.dart';
 
 void main() => runApp(Quizzler());
+
+QuizMemo qm = QuizMemo();
 
 class Quizzler extends StatelessWidget {
   @override
@@ -28,12 +30,6 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Widget> scoreKeeper = [];
-  List<Question> questionList = [
-    Question(q: 'The sun raises in the east.', a: true),
-    Question(q: 'Two added to Two is four.', a: true),
-    Question(q: 'The Four multiply with two is six.', a: false),
-    Question(q: 'The English letters starts with \'z\' ', a: false),
-  ];
 
   int questionNum = 0; //keep track of question numbers
   @override
@@ -49,7 +45,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questionList[questionNum].q,
+                qm.questionList[questionNum].q,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -75,7 +71,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = questionList[questionNum].a;
+                bool correctAnswer = qm.questionList[questionNum].a;
                 if (correctAnswer == true) {
                   print('Right!');
                 } else {

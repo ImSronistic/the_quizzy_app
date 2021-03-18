@@ -67,6 +67,7 @@ class _QuizPageState extends State<QuizPage> {
                 backgroundColor: Colors.green,
               ),
               child: Text(
+                //constracter of Text class.
                 'True',
                 style: TextStyle(
                   color: Colors.white,

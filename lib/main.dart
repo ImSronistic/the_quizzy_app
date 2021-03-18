@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'question.dart';
 
 void main() => runApp(Quizzler());
 
@@ -26,17 +27,23 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  List<Widget> scoreKeeper = [];
-  List<String> questionList = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.',
-  ];
-  List<bool> answer = [
-    false,
-    true,
-    true,
-  ];
+  Question q1 = Question(q: 'The sun raises in the east.', a: true);
+  Question q2 = Question(q: 'Two added to Two is four.', a: true);
+  Question q3 = Question(q: 'The Four multiply with two is six.', a: true);
+  Question q4 = Question(q: 'The English letters starts with \'z\' ', a: true);
+
+  // List<Widget> scoreKeeper = [];
+  // List<String> questionList = [
+  //   'You can lead a cow down stairs but not up stairs.',
+  //   'Approximately one quarter of human bones are in the feet.',
+  //   'A slug\'s blood is green.',
+  // ];
+  // List<bool> answer = [
+  //   false,
+  //   true,
+  //   true,
+  // ];
+
   int questionNum = 0;
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'question.dart';
 
 class QuizMemo {
+  int _questionNum = 0; //keep track of question numbers
   List<Question> _questionList = [
     Question(q: 'The sun raises in the east.', a: true),
     Question(q: 'Two added to Two is four.', a: true),
@@ -14,11 +15,17 @@ class QuizMemo {
     Question(q: 'Do you like this quiz', a: true),
   ];
 
-  String getQuestionText(int questionNum) {
-    return _questionList[questionNum].q;
+  void nextQuestion() {
+    if (_questionNum < _questionList.length - 1) {
+      _questionNum++;
+    }
   }
 
-  bool getAnswerText(int questionNum) {
-    return _questionList[questionNum].a;
+  String getQuestionText() {
+    return _questionList[_questionNum].q;
+  }
+
+  bool getAnswerText() {
+    return _questionList[_questionNum].a;
   }
 }

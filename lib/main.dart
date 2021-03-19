@@ -10,17 +10,18 @@ class Quizzler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/img1.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: QuizPage(),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
 
@@ -84,6 +85,7 @@ class _QuizPageState extends State<QuizPage> {
                 style: TextStyle(
                   fontSize: 25.0,
                   color: Colors.white,
+                  backgroundColor: Colors.black45,
                 ),
               ),
             ),

@@ -1,6 +1,6 @@
-# the_quizzy_app - by Srone
+# The Quizzy App - by Srone
 
-## Our Goal
+## What's it for?
 
 In this tutorial we will be reviewing Stateful and Stateless Widgets as well as learning about the fundamental of Object Oriented Programming (OOP) one of the four Programming paradigm - Classes and Objects. 
 

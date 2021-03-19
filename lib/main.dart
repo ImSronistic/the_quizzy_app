@@ -37,7 +37,16 @@ class _QuizPageState extends State<QuizPage> {
 
     setState(() {
       if (quizMemo.isFinished() == true) {
-        Alert(context: context, title: "RFLUTTER", desc: "Flutter is awesome.")
+        Alert(
+                style: AlertStyle(
+                  animationType: AnimationType.shrink,
+                  isCloseButton: true,
+                  backgroundColor: Colors.orange,
+                  overlayColor: Colors.black,
+                ),
+                context: context,
+                title: "Quizzy App",
+                desc: "Thanks for your time :)")
             .show();
 
         quizMemo.reset();

@@ -30,25 +30,15 @@ class QuizMemo {
     return _questionList[_questionNum].a;
   }
 
-   bool isFinished(){
-   if(_questionNum > _questionList.length){
-     return true;
-   }
-   else
-     {
-       return false;
-     }
+  bool isFinished() {
+    if (_questionNum >= _questionList.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  void reset(){
+  void reset() {
     _questionNum = 0;
-
   }
-
-
-
-
-
-
-
 }

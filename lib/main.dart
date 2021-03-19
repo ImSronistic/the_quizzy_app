@@ -3,7 +3,7 @@ import 'quiz_memo.dart';
 
 void main() => runApp(Quizzler());
 
-QuizMemo qm = QuizMemo();
+QuizMemo quizMemo = QuizMemo();
 
 class Quizzler extends StatelessWidget {
   @override
@@ -45,7 +45,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                qm.questionList[questionNum].q,
+                quizMemo.getQuestionText(questionNum),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -71,7 +71,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = qm.questionList[questionNum].a;
+                bool correctAnswer = quizMemo.getAnswerText(questionNum);
                 if (correctAnswer == true) {
                   print('Right!');
                 } else {

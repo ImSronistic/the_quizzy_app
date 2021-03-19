@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quiz_memo.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 void main() => runApp(Quizzler());
 
@@ -33,18 +34,25 @@ class _QuizPageState extends State<QuizPage> {
 
   void checkAnswer(bool userAnswer) {
     bool correctAnswer = quizMemo.getAnswerText();
-    if (userAnswer == correctAnswer) {
-      scoreKeeper.add(Icon(
-        Icons.check,
-        color: Colors.green,
-      ));
-    } else {
-      scoreKeeper.add(Icon(
-        Icons.close,
-        color: Colors.red,
-      ));
-    }
+
     setState(() {
+      if (quizMemo.isFinished() == true) {
+        Alert(context: context, title: "RFLUTTER", desc: "Flutter is awesome.")
+            .show();
+
+        quizMemo.reset();
+        scoreKeeper = [];
+      } else if (userAnswer == correctAnswer) {
+        scoreKeeper.add(Icon(
+          Icons.check,
+          color: Colors.green,
+        ));
+      } else {
+        scoreKeeper.add(Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
+      }
       quizMemo.nextQuestion();
     });
   }
@@ -80,11 +88,13 @@ class _QuizPageState extends State<QuizPage> {
                 backgroundColor: Colors.green,
               ),
               child: Text(
-                //constracter of Text class.
+                //constructor of Text class.
                 'True',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+                  //Constructor of TextStyle class
+                  color: Colors
+                      .white, //color is the property of the class textStyle
+                  fontSize: 20.0, //& we are setting it to white color.
                 ),
               ),
               onPressed: () {

@@ -1,4 +1,5 @@
 import 'question.dart';
+//import 'package:rflutter_alert/rflutter_alert.dart';
 
 class QuizMemo {
   int _questionNum = 0; //keep track of question numbers
@@ -28,4 +29,26 @@ class QuizMemo {
   bool getAnswerText() {
     return _questionList[_questionNum].a;
   }
+
+   bool isFinished(){
+   if(_questionNum > _questionList.length){
+     return true;
+   }
+   else
+     {
+       return false;
+     }
+  }
+
+  void reset(){
+    _questionNum = 0;
+
+  }
+
+
+
+
+
+
+
 }

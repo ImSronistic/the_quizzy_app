@@ -11,7 +11,7 @@ In this tutorial we will be reviewing Stateful and Stateless Widgets as well as 
 - Dart classes and objects.
 - Using class constructors. ex. Text(), TextButton() etc.
 - Extracting Widgets to refactor your code.
-- private and public modifiers in Dart. Eg. _privateVar 7 publicVar
+- private and public modifiers in Dart. Eg. _private Var 7 publicVar
 - How to use Dart lists.
 - The difference between var, const and final.
 
